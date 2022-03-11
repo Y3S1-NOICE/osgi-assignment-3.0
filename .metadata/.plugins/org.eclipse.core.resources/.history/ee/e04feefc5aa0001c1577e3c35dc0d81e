@@ -1,0 +1,10 @@
+package pharmacy.service;
+
+import java.sql.ResultSet;
+
+public interface IPharamacyService {
+	public boolean pharmacistLogin(String userId, String password);
+	public void createPrescription(String doctorNic, String patientNic, String details);
+	public ResultSet seePrescriptions(String patientNic, String todoStatus);
+	public void makeMedicineReady(String prescriptionId, String price, String payStatus);
+}

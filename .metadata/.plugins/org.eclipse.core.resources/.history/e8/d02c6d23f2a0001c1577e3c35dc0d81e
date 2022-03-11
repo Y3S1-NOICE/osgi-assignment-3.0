@@ -1,0 +1,5 @@
+package bill.service;
+
+public class BillServiceImpl {
+
+}

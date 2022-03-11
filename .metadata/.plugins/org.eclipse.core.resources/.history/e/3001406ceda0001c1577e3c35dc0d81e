@@ -1,0 +1,13 @@
+package doctorchannel.service;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import database.service.IDatabaseService;
+import userstore.service.IUserService;
+
+public class ChannelServiceImpl implemets IChannelService {
+
+	
+	
+}

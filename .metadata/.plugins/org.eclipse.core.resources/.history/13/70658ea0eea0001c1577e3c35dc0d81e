@@ -1,0 +1,39 @@
+package doctorchannel.service;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import database.service.IDatabaseService;
+import userstore.service.IUserService;
+
+public class ChannelServiceImpl implements IChannelService {
+	private IUserService userService;
+	private PreparedStatement preparedStatement;
+	private Connection connection;
+	
+	public ChannelServiceImpl(IDatabaseService dbService, IUserService userService) {
+		this.userService = userService;
+		this.preparedStatement = null;
+		this.connection = dbService.getDatabaseConnection();
+	}
+	
+	@Override
+	public void channelDoctor(String doctorNic, String patientNic, String date) {
+		
+	}
+
+	@Override
+	public ResultSet seeDoctorChannels(String doctorNic) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteChannels(String channelId) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+}

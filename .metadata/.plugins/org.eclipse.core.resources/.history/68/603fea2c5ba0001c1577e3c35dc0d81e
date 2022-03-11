@@ -1,0 +1,42 @@
+package pharmacy.service;
+
+import java.sql.ResultSet;
+
+import database.service.IDatabaseService;
+import userstore.service.IUserService;
+import static pharmacy.util.Util.*;
+
+public class PharmacyServiceImpl implements IPharamacyService {
+
+	private IDatabaseService dbService;
+	private IUserService userService;
+	
+	public PharmacyServiceImpl(IDatabaseService dbService, IUserService userService) {
+		this.dbService = dbService;
+		this.userService = userService;
+	}
+	
+	@Override
+	public boolean pharmacistLogin(String nic, String password) {
+		return userService.login(nic, password, ROLE_PHARMACIST);
+	}
+
+	@Override
+	public void createPrescription(String doctorNic, String patientNic, String details) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public ResultSet seePrescriptions(String patientNic, String todoStatus) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void makeMedicineReady(String prescriptionId, String price, String payStatus) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

@@ -1,0 +1,115 @@
+package userstore.service;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import static userstore.queries.DBqueries.*;
+import database.service.IDatabaseService;
+import userstore.queries.DBqueries;
+
+
+public class UserService implements IUserService {
+	
+	private Connection connection;
+	private Statement  statement;
+	private PreparedStatement preparedStatement;
+	//private IDatabaseService database;
+	
+	public UserService(IDatabaseService database) {
+		//this.database = database;
+		connection = database.getDatabaseConnection();
+		statement = null;
+		preparedStatement = null;
+	}
+	
+	@Override
+	public boolean login(String nic, String password, String role) {
+		ResultSet resultSet = null;
+		
+		try {
+			preparedStatement = connection.prepareStatement(LOGIN_QUERY);
+			preparedStatement.setString(1, role);
+			preparedStatement.setString(2, nic);
+			preparedStatement.setString(3, password);
+			resultSet = preparedStatement.executeQuery();
+			
+			return resultSet.next() ? true : false;
+		} catch (Exception e) {
+			System.out.println("Something went wrong when logging in! "+e.getMessage());
+			return false;
+		}
+	}
+
+	@Override
+	public void createUser(String nic, String fName, String lName, String role, String password) {
+		
+		try {
+			preparedStatement = connection.prepareStatement(CREATE_USER_QUERY);
+			preparedStatement.setString(1, nic);
+			preparedStatement.setString(2, fName);
+			preparedStatement.setString(3, lName);
+			preparedStatement.setString(4, role);
+			preparedStatement.setString(5, password);
+			preparedStatement.execute(CREATE_USER_TABLE_IF_NOT_AVAILABLE_QUERY);
+		} catch (Exception e) {
+			System.out.println("Something went wrong when creating user table! "+e.getMessage());
+		} try {
+			preparedStatement.execute();
+		} catch (Exception e) {
+			System.out.println("Something went wrong when creating user! "+e.getMessage());
+		}
+	}
+
+	@Override
+	public ResultSet getAllUsers() {
+
+		try {
+			statement = connection.createStatement();
+			return statement.executeQuery(GET_USERS);
+		} catch (Exception e) {
+			System.out.println("Something went wrong when retrieving user! "+e.getMessage());
+			return null;
+		}
+	}
+
+	@Override
+	public ResultSet getAllUsers(String role) {
+		
+		try {
+			preparedStatement = connection.prepareStatement(GET_USERS_BY_ROLE);
+			preparedStatement.setString(1, role);
+			return preparedStatement.executeQuery();
+		} catch (Exception e) {
+			System.out.println("Something went wrong when retrieving user! "+e.getMessage());
+			return null;
+		}
+	}
+	
+//	@Override
+//	public ResultSet getUserByLname(String lName, String role) {
+//		String sqlQuery = "SELECT * FROM user WHERE role=? AND lname='"+ lName +"'";
+//		
+//		try {
+//			statement = connection.createStatement();
+//			return statement.executeQuery(sqlQuery);
+//		} catch (Exception e) {
+//			System.out.println("Something went wrong when retrieving user! "+e.getMessage());
+//			return null;
+//		}
+//	}
+	
+//	@Override
+//	public ResultSet getUserByNicAndRole(String nic, String role) {
+//		String sqlQuery = "SELECT * FROM user WHERE role='"+ role +"' AND nic='"+ nic +"'";
+//		
+//		try {
+//			statement = connection.createStatement();
+//			return statement.executeQuery(sqlQuery);
+//		} catch (Exception e) {
+//			System.out.println("Something went wrong when retrieving user! "+e.getMessage());
+//			return null;
+//		}
+//	}
+	
+}

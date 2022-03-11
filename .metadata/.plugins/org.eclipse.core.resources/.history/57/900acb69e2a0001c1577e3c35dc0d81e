@@ -1,0 +1,5 @@
+package doctorpublisher.util;
+
+public class Util {
+	public static final String ROLE_DOCTOR = "doctor";
+}

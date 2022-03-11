@@ -1,0 +1,12 @@
+package laboratory.util;
+
+public class DBQueries {
+	
+	public static final String CREATE_LABTEST_RESULTS_TABLE_IF_NOT_AVAILABLE_QUERY = 
+			"CREATE TABLE IF NOT EXISTS labTestsResults"
+		            + "  (patientRecordsId	INT NOT NULL AUTO_INCREMENT PRIMARY KEY,"
+		            + "   nic						VARCHAR(20),"
+		    		+ "   gender					VARCHAR(20),"
+		    		+ "   age						VARCHAR(20),"
+					+ "   condition					VARCHAR(20));";
+}

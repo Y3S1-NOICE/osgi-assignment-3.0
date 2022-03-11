@@ -1,0 +1,57 @@
+package doctorpublisher.service;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import static doctorpublisher.util.Util.*;
+import static doctorpublisher.util.DBQueries.*;
+import database.service.IDatabaseService;
+import userstore.service.IUserService;
+
+public class DoctorServiceImpl implements IDoctorService {
+	
+	private IUserService userService;
+	private PreparedStatement preparedStatement;
+	private Connection connection;
+	
+	public DoctorServiceImpl(IDatabaseService dbService, IUserService userService) {
+		this.userService = userService;
+		this.preparedStatement = null;
+		this.connection = dbService.getDatabaseConnection();
+	}
+	@Override
+	public boolean doctorLogin(String nic, String password) {
+		return userService.login(nic, password, ROLE_DOCTOR);
+	}
+
+	@Override
+	public ResultSet getAvailableDoctors() {
+		try {
+			preparedStatement = connection.prepareStatement(GET_AVAILABLE_DOCTORS);
+			return preparedStatement.executeQuery();
+		} catch (Exception e) {
+			System.out.println("Something went wrong when getting availabale doctors details! "+e.getMessage());
+			return null;
+		}
+	}
+
+	@Override
+	public void setAvailability(String nic) {
+		ResultSet doctor = userService.getUserByNicAndRole(nic, ROLE_DOCTOR);
+		String fName = "";
+		String lName = "";
+		try {
+			while(doctor.next()) {
+				fName = doctor.getString(FIRST_NAME);
+				lName = doctor.getString(LAST_NAME);
+			}
+		} catch (Exception e) {
+			System.out.println("Something went wrong when getting doctor details! "+e.getMessage());
+		}
+		
+		
+	}
+
+}

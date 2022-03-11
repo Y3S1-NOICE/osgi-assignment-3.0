@@ -1,0 +1,5 @@
+package doctorchannel.service;
+
+public class ChannelServiceImpl {
+
+}

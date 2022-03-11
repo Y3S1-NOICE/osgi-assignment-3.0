@@ -1,0 +1,38 @@
+package pharmacy.activator;
+
+import org.osgi.framework.BundleActivator;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.ServiceReference;
+import org.osgi.framework.ServiceRegistration;
+
+import database.service.IDatabaseService;
+import userstore.service.IUserService;
+import userstore.service.UserService;
+
+public class Activator implements BundleActivator {
+
+	private ServiceReference dbService;
+	private ServiceReference userService;
+	private ServiceRegistration serviceRegistration;
+	
+	public void start(BundleContext context) {
+		System.out.println("Pharmacy is starting...");
+		
+		dbService = context.getServiceReference(IDatabaseService.class.getName());
+		IDatabaseService databaseService = (IDatabaseService) context.getService(dbService);
+		
+		userService = context.getServiceReference(IUserService.class.getName());
+		IDatabaseService userService = (IUserService) context.getService(userService);
+		
+//		IUserService userService = new UserService(databaseService);
+//		serviceRegistration = context.registerService(IUserService.class.getName(), userService, null);
+		
+	}
+		
+	public void stop(BundleContext context) throws Exception {
+		System.out.println("Pharmacy is stopped...");
+		context.ungetService(dbService);
+		context.ungetService(userService);
+		serviceRegistration.unregister();
+	}
+}

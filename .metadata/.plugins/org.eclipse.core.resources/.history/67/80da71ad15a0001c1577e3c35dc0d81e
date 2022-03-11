@@ -1,0 +1,5 @@
+package patientpublisher.service;
+
+public class PatientServiceImpl implements IPatientService {
+
+}

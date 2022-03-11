@@ -1,0 +1,25 @@
+package doctorpublisher.service;
+
+import java.sql.ResultSet;
+
+public class DoctorServiceImpl implements IDoctorService {
+
+	@Override
+	public boolean doctorLogin(String nic, String password) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public ResultSet getAvailableDoctors() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setAvailability(String nic, String availability) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

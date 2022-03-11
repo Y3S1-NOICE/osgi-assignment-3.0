@@ -1,0 +1,5 @@
+package userstore.queries;
+
+public class DBqueries {
+
+}

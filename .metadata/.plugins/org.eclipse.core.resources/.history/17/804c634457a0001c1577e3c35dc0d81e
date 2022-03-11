@@ -1,0 +1,12 @@
+package userstore.queries;
+
+public class DBqueries {
+	public static String CREATE_USER_TABLE_IF_NOT_AVAILABLE = 
+				"CREATE TABLE IF NOT EXISTS " + "user"
+            + "  (userId	INT NOT NULL AUTO_INCREMENT"
+            + "   nic						VARCHAR(20))"
+    		+ "   fName						VARCHAR(20))"
+    		+ "   lName						VARCHAR(20))"
+			+ "   role						VARCHAR(20))"
+			+ "   password					VARCHAR(20))";
+}

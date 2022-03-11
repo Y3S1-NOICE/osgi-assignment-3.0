@@ -1,0 +1,49 @@
+package bill.service;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import laboratory.service.ILaboratoryService;
+import pharmacy.service.IPharmacyService;
+import database.service.IDatabaseService;
+import userstore.service.IUserService;
+
+public class BillServiceImpl implements IBillService {
+
+	private ILaboratoryService labService;
+	private IPharmacyService pharmacyService;
+	private PreparedStatement preparedStatement;
+	private Connection connection;
+	
+	public BillServiceImpl(IDatabaseService dbService, IUserService userService) {
+		this.userService = userService;
+		this.preparedStatement = null;
+		this.connection = dbService.getDatabaseConnection();
+	}
+	
+	@Override
+	public void payAllMedicines(String nic) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void payAllLabTests(String nic) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public ResultSet seeUnpaidLabTests(String nic) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ResultSet seeUnpaidMedicines(String nic) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+}

@@ -1,0 +1,39 @@
+package test;
+
+import database.service.IDatabaseService;
+
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import org.osgi.framework.BundleActivator;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.ServiceReference;
+import pharmacy.service.IPharmacyService;
+import userstore.service.IUserService;
+
+public class Activator implements BundleActivator {
+	
+	private ServiceReference dbReference;
+	private ServiceReference userStore;
+	private ServiceReference pharmacyReference;
+	
+	public void start(BundleContext context) {
+		dbReference = context.getServiceReference(IDatabaseService.class.getName());
+		IDatabaseService service = (IDatabaseService) context.getService(dbReference);
+		
+		userStore = context.getServiceReference(IUserService.class.getName());
+		IUserService userService = (IUserService) context.getService(userStore);
+		
+		pharmacyReference = context.getServiceReference(IPharmacyService.class.getName());
+		
+		//userService.createUser("200019202676", "Dulshan", "Perera", "patient", "456");
+		//System.out.println(	userService.login("200019202676", "123", "doctor"));
+		
+	}
+
+	public void stop(BundleContext context) throws Exception {
+		System.out.println("Patient Management Service Stopped!!!");
+		context.ungetService(dbReference);
+	}
+
+}

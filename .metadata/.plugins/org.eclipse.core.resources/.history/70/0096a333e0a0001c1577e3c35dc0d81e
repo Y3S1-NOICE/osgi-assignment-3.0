@@ -1,0 +1,13 @@
+package doctorpublisher.util;
+
+public class DBQueries {
+
+	public static final String CREATE_DOCTOR_AVAILABILITY_TABLE_IF_NOT_EXSIST = 
+			"CREATE TABLE IF NOT EXISTS doctor_availability"
+		            + "  (nic	INT NOT NULL AUTO_INCREMENT PRIMARY KEY,"
+		            + "   nic								VARCHAR(20),"
+		    		+ "   testName							VARCHAR(20),"
+		    		+ "   result							VARCHAR(20),"
+		    		+ "   cost								VARCHAR(20),"
+					+ "   payStatus							VARCHAR(20));";
+}

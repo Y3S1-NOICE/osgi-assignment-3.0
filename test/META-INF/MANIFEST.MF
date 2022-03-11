@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Test
+Bundle-SymbolicName: test
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: test.Activator
+Bundle-RequiredExecutionEnvironment: JavaSE-15
+Automatic-Module-Name: test
+Import-Package: database.service,
+ doctorpublisher.service,
+ org.osgi.framework;version="1.3.0",
+ pharmacy.service,
+ userstore.service
+Bundle-ActivationPolicy: lazy

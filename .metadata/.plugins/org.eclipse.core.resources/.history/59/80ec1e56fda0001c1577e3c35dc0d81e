@@ -1,0 +1,14 @@
+package bill.util;
+
+public class DBQueries {
+
+	public static String UPDATE_LAB_PAYMENTS = 
+			"UPDATE labTestsResults " +
+			"SET payStatus = ? where nic = ?";
+	
+	public static String UPDATE_MEDICINE_PAYMENTS = 
+			"UPDATE issue_medicine " +
+			"SET payStatus = ? where patientNic = ?";
+	
+	
+}

@@ -1,0 +1,25 @@
+package userstore.activator;
+
+import java.sql.Statement;
+
+import org.osgi.framework.BundleActivator;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.ServiceReference;
+
+import database.service.IDatabaseService;
+
+public class Activator implements BundleActivator {
+
+	private ServiceReference dbReference;
+	
+	@SuppressWarnings("unchecked")
+	public void start(BundleContext context) {
+		dbReference = context.getServiceReference(IDatabaseService.class.getName());
+		IDatabaseService service = (IDatabaseService) context.getService(dbReference);
+		
+	public void stop(BundleContext context) throws Exception {
+		System.out.println("Patient Management Service Stopped!!!");
+		context.ungetService(dbReference);
+	}
+
+}

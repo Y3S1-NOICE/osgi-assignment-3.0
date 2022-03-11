@@ -1,0 +1,12 @@
+package laboratory.service;
+
+import java.sql.ResultSet;
+
+public interface ILaboratoryService {
+
+	public void createLabTestResult(String patientNic, String testName, String result, String cost, String payStatus);
+	public void requestLabtest(String patientNic, String testName);
+	boolean labTesterLogin(nic, password);
+	public ResultSet seeLabTests(String patientNic, String payStatus);
+	
+}

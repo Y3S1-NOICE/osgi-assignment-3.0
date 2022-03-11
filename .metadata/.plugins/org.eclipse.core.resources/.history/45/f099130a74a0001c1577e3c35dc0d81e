@@ -1,0 +1,44 @@
+package patientpublisher.service;
+
+import static patientpublisher.util.Util.*;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+
+import database.service.IDatabaseService;
+import userstore.service.IUserService;
+
+public class PatientServiceImpl implements IPatientService {
+	
+	private IUserService userService;
+	private Connection connection;
+	
+	public PatientServiceImpl(IDatabaseService databaseService, IUserService userService) {
+		this.userService = userService;
+		this.connection = databaseService.getDatabaseConnection();
+	}
+	
+	@Override
+	public boolean patientLogin(String nic, String password) {
+		return userService.login(nic, password, ROLE_PATIENT);
+	}
+
+	@Override
+	public void registerPatient(String nic, String fName, String lName, String password) {
+		userService.createUser(nic, fName, lName, ROLE_PATIENT, password);
+		
+	}
+
+	@Override
+	public void setPatientRecords(String nic, String gender, String age, String condition) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public ResultSet getPatientRecords(String nic) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

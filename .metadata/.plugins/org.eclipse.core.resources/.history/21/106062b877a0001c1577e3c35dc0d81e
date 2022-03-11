@@ -1,0 +1,9 @@
+package laboratory.service;
+
+public interface ILaboratoryService {
+
+	public void requestLabTest(String patientNic, String DoctorNic, String testName);
+	public void createLabTestResult(String patientNic, String DoctorNic, String testName);
+	
+	
+}

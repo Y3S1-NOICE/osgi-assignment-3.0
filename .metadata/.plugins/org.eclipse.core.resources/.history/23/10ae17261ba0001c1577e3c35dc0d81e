@@ -1,0 +1,5 @@
+package doctorpublisher.service;
+
+public class IDoctorService {
+
+}

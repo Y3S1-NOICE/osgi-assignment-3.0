@@ -1,0 +1,13 @@
+package doctorpublisher.service;
+import java.sql.ResultSet;
+
+
+public interface IDoctorService {
+
+	public boolean doctorLogin(String nic, String password);
+	public ResultSet getAvailableDoctors();
+	public ResultSet getDoctorByName(String lName);
+	public void setAvailability(String nic, String availability);
+	public ResultSet getDoctorDetails(String nic);
+	
+}

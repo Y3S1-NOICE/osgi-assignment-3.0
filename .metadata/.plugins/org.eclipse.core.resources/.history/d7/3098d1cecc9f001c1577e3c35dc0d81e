@@ -1,0 +1,45 @@
+package userstore.service;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import database.service.IDatabaseService;
+
+public class UserService implements IUserService {
+	
+	private Connection connection = null;
+	private Statement statement = null;
+	private IDatabaseService database;
+	private ResultSet resultSet;
+
+	public UserService(IDatabaseService database) {
+		this.database = database;
+		statement = null;
+	}
+	
+
+	@Override
+	public boolean login(String nic, String password, String role) {
+		return false;
+	}
+
+	@Override
+	public void createUser(String nic, String fName, String lName, String role, String password) {
+		
+		
+	}
+
+	@Override
+	public ResultSet getAllUsers() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ResultSet getAllUsers(String role) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}

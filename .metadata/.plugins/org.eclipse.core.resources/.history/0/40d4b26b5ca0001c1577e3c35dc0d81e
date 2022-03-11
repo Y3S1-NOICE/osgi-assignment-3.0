@@ -1,0 +1,11 @@
+package pharmacy.util;
+
+public class DBQueries {
+	public static final String CREATE_PRESCRIPTION_TABLE_IF_NOT_AVAILABLE_QUERY = 
+			"CREATE TABLE IF NOT EXISTS prescription"
+		            + "  (prescriptionId	INT NOT NULL AUTO_INCREMENT PRIMARY KEY,"
+		            + "   doctorNic						VARCHAR(20),"
+		    		+ "   patientNic					VARCHAR(20),"
+		    		+ "   details						VARCHAR(20),"
+					+ "   status						VARCHAR(20));";
+}

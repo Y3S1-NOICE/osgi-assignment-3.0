@@ -1,0 +1,92 @@
+package userstore.service;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import database.service.IDatabaseService;
+
+public class UserService implements IUserService {
+	
+	private Connection connection;
+	private Statement  statement;
+	private PreparedStatement preparedStatement;
+	//private IDatabaseService database;
+	
+	public UserService(IDatabaseService database) {
+		//this.database = database;
+		connection = database.getDatabaseConnection();
+		statement = null;
+		preparedStatement = null;
+	}
+	
+
+	@Override
+	public boolean login(String nic, String password, String role) {
+		String sqlQuery = "SELECT * FROM user WHERE role='"+ role +"' AND nic='"+ nic +"' AND password ='"+ password +"'";
+		ResultSet resultSet = null;
+		
+		try {
+			statement = connection.createStatement();
+			resultSet = statement.executeQuery(sqlQuery);
+			return resultSet.next() ? true : false;
+		} catch (Exception e) {
+			System.out.println("Something went wrong when logging in! "+e.getMessage());
+			return false;
+		}
+	}
+
+	@Override
+	public void createUser(String nic, String fName, String lName, String role, String password) {
+		
+		String createTableSql = "CREATE TABLE IF NOT EXISTS " + "user"
+	            + "  (userId	INT NOT NULL AUTO_INCREMENT"
+	            + "   nic						VARCHAR(20))"
+	    		+ "   fName						VARCHAR(20))"
+	    		+ "   lName						VARCHAR(20))"
+				+ "   role						VARCHAR(20))"
+				+ "   password					VARCHAR(20))";
+		
+		String sqlQuery = "INSERT INTO user(nic, fName, lName, role, password) VALUES (?, ?, ?, ?, ?)";
+		try {
+			preparedStatement = connection.prepareStatement(sqlQuery);
+			preparedStatement.setString(1, nic);
+			preparedStatement.setString(2, fName);
+			preparedStatement.setString(3, lName);
+			preparedStatement.setString(4, role);
+			preparedStatement.setString(5, password);
+			preparedStatement.execute(createTableSql);
+			preparedStatement.execute(sqlQuery);
+		} catch (Exception e) {
+			System.out.println("Something went wrong when creating user! "+e.getMessage());
+		}
+	}
+
+	@Override
+	public ResultSet getAllUsers() {
+		String sqlQuery = "SELECT * FROM user";
+		
+		try {
+			statement = connection.createStatement();
+			return statement.executeQuery(sqlQuery);
+		} catch (Exception e) {
+			System.out.println("Something went wrong when retrieving user! "+e.getMessage());
+			return null;
+		}
+	}
+
+	@Override
+	public ResultSet getAllUsers(String role) {
+		String sqlQuery = "SELECT * FROM user WHERE role='"+ role +"'";
+		
+		try {
+			statement = connection.createStatement();
+			return statement.executeQuery(sqlQuery);
+		} catch (Exception e) {
+			System.out.println("Something went wrong when retrieving user! "+e.getMessage());
+			return null;
+		}
+	}
+	
+}

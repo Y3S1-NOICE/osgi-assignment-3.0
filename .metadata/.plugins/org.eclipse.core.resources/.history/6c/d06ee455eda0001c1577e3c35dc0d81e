@@ -1,0 +1,21 @@
+package doctorchannel.service;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import database.service.IDatabaseService;
+import userstore.service.IUserService;
+
+public class ChannelServiceImpl {
+	private IUserService userService;
+	private PreparedStatement preparedStatement;
+	private Connection connection;
+	
+	public ChannelServiceImpl(IDatabaseService dbService, IUserService userService) {
+		this.userService = userService;
+		this.preparedStatement = null;
+		this.connection = dbService.getDatabaseConnection();
+	}
+	
+	
+}

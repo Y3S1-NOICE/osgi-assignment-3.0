@@ -1,0 +1,32 @@
+package bill.service;
+
+import java.sql.ResultSet;
+
+public class BillServiceImpl implements IBillService {
+
+	@Override
+	public void payAllMedicines(String nic) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void payAllLabTests(String nic) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public ResultSet seeUnpaidLabTests(String nic) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ResultSet seeUnpaidMedicines(String nic) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+}

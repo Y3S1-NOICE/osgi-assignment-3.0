@@ -1,0 +1,10 @@
+package patientpublisher.service;
+
+public interface IPatientService {
+
+	public boolean patientLogin(String nic, String password);
+	public void registerPatient(String nic, String fName, String lName, String password);
+	public void getAllPatients();
+	public void getPatientByName(String name);
+	public void getPatientByNic(String nic);
+}

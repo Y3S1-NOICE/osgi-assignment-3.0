@@ -1,0 +1,59 @@
+package userstore.activator;
+
+import java.sql.Statement;
+
+import org.osgi.framework.BundleActivator;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.ServiceReference;
+
+import database.service.IDatabaseService;
+
+public class Activator implements BundleActivator {
+
+	private ServiceReference dbReference;
+	
+	public void start(BundleContext context) {
+		dbReference = context.getServiceReference(IDatabaseService.class.getName());
+		IDatabaseService service = (IDatabaseService) context.getService(dbReference);
+		
+		    String sqlCreate = "CREATE TABLE IF NOT EXISTS " + "test_table"
+		            + "  (brand           VARCHAR(10),"
+		            + "   player_position VARCHAR(20))";
+
+		    Statement stmt = null;
+			try {
+				stmt = service.getDatabaseConnection().createStatement();
+			} catch (Exception e1) {
+				System.out.println(e1.getMessage());
+			}
+
+		    String brand = "suporo";
+		    String posi = "ceo";
+		    
+	String sqlQuery = "INSERT INTO test_table(brand, player_position) VALUES('"+brand+"', '"+posi+"')";
+    try {
+		stmt.execute(sqlCreate);
+	    stmt.execute(sqlQuery);
+	} catch (Exception e) {
+		// TODO Auto-generated catch block
+		System.out.println(e.getMessage());
+	}
+
+//		
+//		try {
+//			statement = connection.createStatement();
+//			statement.executeUpdate(sqlQuery);
+//			System.out.println("Laboratory tests information successfully inserted ...");
+//			
+//		} catch (SQLException exc) {
+//			System.out.println("Issue in inserting laboratory details !!!");
+//			System.out.println(exc.getMessage());
+//		}
+	}
+
+	public void stop(BundleContext context) throws Exception {
+		System.out.println("Patient Management Service Stopped!!!");
+		context.ungetService(dbReference);
+	}
+
+}
