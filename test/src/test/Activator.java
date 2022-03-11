@@ -45,6 +45,8 @@ public class Activator implements BundleActivator {
 		
 //		userService.createUser("PH002", "Kamal", "Perera", "pharmacist", "123");
 		//System.out.println(	userService.login("200019202676", "456", "patient"));
+		
+		
 
 	}
 

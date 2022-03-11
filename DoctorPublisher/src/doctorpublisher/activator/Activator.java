@@ -21,8 +21,8 @@ public class Activator implements BundleActivator {
 		dbReference = context.getServiceReference(IDatabaseService.class.getName());
 		IDatabaseService databaseService = (IDatabaseService) context.getService(dbReference);
 		
-		dbReference = context.getServiceReference(IUserService.class.getName());
-		IUserService userService = (IUserService) context.getService(dbReference);
+		userReference = context.getServiceReference(IUserService.class.getName());
+		IUserService userService = (IUserService) context.getService(userReference);
 		
 		IDoctorService doctorService = new DoctorServiceImpl(databaseService, userService);
 		serviceRegistration = context.registerService(IDoctorService.class.getName(), doctorService, null);

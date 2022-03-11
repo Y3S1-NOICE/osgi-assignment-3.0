@@ -1,7 +1,12 @@
 #encoding=UTF-8
 #version=1
+Bill,1.0.0.qualifier,file:/E:/y3s1/SA/assignment%203.0/Bill/,4,true
 Database,1.0.0.qualifier,file:/E:/y3s1/SA/assignment%203.0/Database/,4,true
+DoctorChannel,1.0.0.qualifier,file:/E:/y3s1/SA/assignment%203.0/DoctorChannel/,4,true
 DoctorPublisher,1.0.0.qualifier,file:/E:/y3s1/SA/assignment%203.0/DoctorPublisher/,4,true
+Laboratory,1.0.0.qualifier,file:/E:/y3s1/SA/assignment%203.0/Laboratory/,4,true
+PatientPublisher,1.0.0.qualifier,file:/E:/y3s1/SA/assignment%203.0/PatientPublisher/,4,true
+PatientSubscriber,1.0.0.qualifier,file:/E:/y3s1/SA/assignment%203.0/PatientSubscriber/,4,true
 Pharmacy,1.0.0.qualifier,file:/E:/y3s1/SA/assignment%203.0/Pharmacy/,4,true
 UserStore,1.0.0.qualifier,file:/E:/y3s1/SA/assignment%203.0/UserStore/,4,true
 ch.qos.logback.classic,1.2.3.v20200428-2012,file:/C:/Users/barth/.p2/pool/plugins/ch.qos.logback.classic_1.2.3.v20200428-2012.jar,4,true
@@ -649,4 +654,3 @@ org.w3c.css.sac,1.3.1.v200903091627,file:/C:/Users/barth/.p2/pool/plugins/org.w3
 org.w3c.dom.events,3.0.0.draft20060413_v201105210656,file:/C:/Users/barth/.p2/pool/plugins/org.w3c.dom.events_3.0.0.draft20060413_v201105210656.jar,4,true
 org.w3c.dom.smil,1.0.1.v200903091627,file:/C:/Users/barth/.p2/pool/plugins/org.w3c.dom.smil_1.0.1.v200903091627.jar,4,true
 org.w3c.dom.svg,1.1.0.v201011041433,file:/C:/Users/barth/.p2/pool/plugins/org.w3c.dom.svg_1.1.0.v201011041433.jar,4,true
-test,1.0.0.qualifier,file:/E:/y3s1/SA/assignment%203.0/test/,4,true

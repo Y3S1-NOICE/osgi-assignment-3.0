@@ -21,7 +21,7 @@ public class Activator implements BundleActivator {
 		dbReference = context.getServiceReference(IDatabaseService.class.getName());
 		IDatabaseService databaseService = (IDatabaseService) context.getService(dbReference);
 		
-		dbReference = context.getServiceReference(IUserService.class.getName());
+		userReference = context.getServiceReference(IUserService.class.getName());
 		IUserService userService = (IUserService) context.getService(userReference);
 		
 		IChannelService channelService = new ChannelServiceImpl(databaseService, userService);

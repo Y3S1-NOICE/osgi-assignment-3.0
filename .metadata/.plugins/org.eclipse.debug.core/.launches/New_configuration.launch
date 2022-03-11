@@ -11,9 +11,7 @@
     <booleanAttribute key="default_auto_start" value="true"/>
     <intAttribute key="default_start_level" value="4"/>
     <setAttribute key="deselected_workspace_bundles">
-        <setEntry value="BillingPublisher"/>
-        <setEntry value="Laboratory"/>
-        <setEntry value="PatientPublisher"/>
+        <setEntry value="test"/>
     </setAttribute>
     <booleanAttribute key="includeOptional" value="true"/>
     <booleanAttribute key="org.eclipse.jdt.launching.ATTR_ATTR_USE_ARGFILE" value="false"/>
@@ -671,12 +669,16 @@
         <setEntry value="org.w3c.dom.svg@default:default"/>
     </setAttribute>
     <setAttribute key="selected_workspace_bundles">
+        <setEntry value="Bill@default:default"/>
         <setEntry value="Database@default:default"/>
+        <setEntry value="DoctorChannel@default:default"/>
         <setEntry value="DoctorPublisher@default:default"/>
+        <setEntry value="Laboratory@default:default"/>
+        <setEntry value="PatientPublisher@default:default"/>
+        <setEntry value="PatientSubscriber@default:default"/>
         <setEntry value="Pharmacy@default:default"/>
         <setEntry value="UserStore@default:default"/>
         <setEntry value="com.mysql.jdbc@default:default"/>
-        <setEntry value="test@default:default"/>
     </setAttribute>
     <booleanAttribute key="show_selected_only" value="false"/>
     <booleanAttribute key="tracing" value="false"/>
