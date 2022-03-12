@@ -1,10 +1,10 @@
 #encoding=UTF-8
 #version=1
-AdminSubscriber,1.0.0.qualifier,file:/E:/y3s1/SA/assignment%203.0/AdminSubscriber/,4,true
 Bill,1.0.0.qualifier,file:/E:/y3s1/SA/assignment%203.0/Bill/,4,true
 Database,1.0.0.qualifier,file:/E:/y3s1/SA/assignment%203.0/Database/,4,true
 DoctorChannel,1.0.0.qualifier,file:/E:/y3s1/SA/assignment%203.0/DoctorChannel/,4,true
 DoctorPublisher,1.0.0.qualifier,file:/E:/y3s1/SA/assignment%203.0/DoctorPublisher/,4,true
+DoctorSubscriber,1.0.0.qualifier,file:/E:/y3s1/SA/assignment%203.0/DoctorSubscriber/,4,true
 Laboratory,1.0.0.qualifier,file:/E:/y3s1/SA/assignment%203.0/Laboratory/,4,true
 PatientPublisher,1.0.0.qualifier,file:/E:/y3s1/SA/assignment%203.0/PatientPublisher/,4,true
 Pharmacy,1.0.0.qualifier,file:/E:/y3s1/SA/assignment%203.0/Pharmacy/,4,true

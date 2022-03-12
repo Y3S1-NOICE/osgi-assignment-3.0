@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: DoctorSubscriber
+Bundle-SymbolicName: DoctorSubscriber
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: doctorsubscriber.activator.Activator
+Bundle-RequiredExecutionEnvironment: JavaSE-15
+Automatic-Module-Name: DoctorSubscriber
+Import-Package: doctorchannel.service,
+ doctorpublisher.service,
+ org.osgi.framework;version="1.3.0",
+ patientpublisher.service,
+ pharmacy.service
+Bundle-ActivationPolicy: lazy
