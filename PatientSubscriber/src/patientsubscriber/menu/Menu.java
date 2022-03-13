@@ -49,11 +49,14 @@ public class Menu {
 				System.out.println("NIC or password is incorrect! \n");
 			}
 		}
+		
+		System.out.println("\n*****WELCOME TO HOSPITAL APPLICATION*****");
+		System.out.println(">>>>PATIENT PORTAL\n");
 	}
 
 	public int displayMainMenu() {
-		System.out.println("\n*****WELCOME TO HOSPITAL APPLICATION*****\n");
-		System.out.println("Choose which service tou want from the below");
+
+		System.out.println("\nMain Menu");
 		System.out.println("\t1. Channel Doctor");
 		System.out.println("\t2. Lab Tests ");
 		System.out.println("\t3. Pharmacy ");

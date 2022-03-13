@@ -96,4 +96,16 @@ public class PharmacyServiceImpl implements IPharmacyService {
 		}
 	}
 
+	@Override
+	public ResultSet seePrescriptions(String todoStatus) {
+		try {
+			preparedStatement = connection.prepareStatement(GET_ALL_PRESCRIPTIONS);
+			preparedStatement.setString(1, todoStatus);
+			return preparedStatement.executeQuery();
+		} catch (Exception e) {
+			System.out.println("Something went wrong when getting prescriptions! "+e.getMessage());
+			return null;
+		}
+	}
+
 }

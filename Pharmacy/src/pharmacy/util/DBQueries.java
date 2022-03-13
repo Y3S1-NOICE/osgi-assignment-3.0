@@ -21,6 +21,8 @@ public class DBQueries {
 	
 	public static final String GET_PRESCRIPTIONS = "SELECT * FROM prescription WHERE patientNic=? AND status=?";
 	
+	public static final String GET_ALL_PRESCRIPTIONS = "SELECT * FROM prescription WHERE status=?";
+	
 	public static final String CREATE_MEDICINE_ISSUE_QUERY = "INSERT INTO issue_medicine(patientNic, prescriptionId, price, payStatus) VALUES (?, ?, ?, ?)";
 	
 	public static final String GET_ISSUED_MEDICINE_DETAILS_QUERY =  "SELECT * FROM issue_medicine WHERE patientNic=? AND payStatus=?";
