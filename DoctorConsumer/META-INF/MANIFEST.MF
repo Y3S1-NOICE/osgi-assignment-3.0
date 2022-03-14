@@ -3,12 +3,12 @@ Bundle-ManifestVersion: 2
 Bundle-Name: DoctorConsumer
 Bundle-SymbolicName: DoctorConsumer
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: doctorsubscriber.activator.Activator
+Bundle-Activator: doctorconsumer.activator.Activator
 Bundle-RequiredExecutionEnvironment: JavaSE-15
 Automatic-Module-Name: DoctorSubscriber
 Import-Package: doctorchannel.service,
- doctorpublisher.service,
+ doctorproducer.service,
  org.osgi.framework;version="1.3.0",
- patientpublisher.service,
- pharmacy.service
+ patientproducer.service,
+ pharmacyproducer.service
 Bundle-ActivationPolicy: lazy

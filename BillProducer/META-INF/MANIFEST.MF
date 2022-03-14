@@ -3,12 +3,12 @@ Bundle-ManifestVersion: 2
 Bundle-Name: BillProducer
 Bundle-SymbolicName: BillProducer
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: bill.activator.Activator
+Bundle-Activator: billproducer.activator.Activator
 Bundle-RequiredExecutionEnvironment: JavaSE-15
 Automatic-Module-Name: Bill
-Import-Package: database.service,
- laboratory.service,
+Import-Package: databaseproducer.service,
+ laboratoryproducer.service,
  org.osgi.framework;version="1.3.0",
- pharmacy.service
+ pharmacyproducer.service
 Bundle-ActivationPolicy: lazy
-Export-Package: bill.service
+Export-Package: billproducer.service

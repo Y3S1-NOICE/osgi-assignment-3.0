@@ -6,8 +6,8 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: doctorchannel.activator.Activator
 Bundle-RequiredExecutionEnvironment: JavaSE-15
 Automatic-Module-Name: DoctorChannel
-Import-Package: database.service,
+Import-Package: databaseproducer.service,
  org.osgi.framework;version="1.3.0",
- userstore.service
+ userstoreproducer.service
 Bundle-ActivationPolicy: lazy
 Export-Package: doctorchannel.service

@@ -5,10 +5,10 @@ import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;
 import org.osgi.framework.ServiceRegistration;
 
-import database.service.IDatabaseService;
+import databaseproducer.service.IDatabaseService;
 import doctorchannel.service.ChannelServiceImpl;
 import doctorchannel.service.IChannelService;
-import userstore.service.IUserService;
+import userstoreproducer.service.IUserService;
 
 public class Activator implements BundleActivator {
 

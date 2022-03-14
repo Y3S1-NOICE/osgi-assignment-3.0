@@ -3,14 +3,14 @@ Bundle-ManifestVersion: 2
 Bundle-Name: PatientConsumer
 Bundle-SymbolicName: PatientConsumer
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: patientsubscriber.activator.Activator
+Bundle-Activator: patientconsumer.activator.Activator
 Bundle-RequiredExecutionEnvironment: JavaSE-15
 Automatic-Module-Name: PatientSubscriber
-Import-Package: bill.service,
+Import-Package: billproducer.service,
  doctorchannel.service,
- doctorpublisher.service,
- laboratory.service,
+ doctorproducer.service,
+ laboratoryproducer.service,
  org.osgi.framework;version="1.3.0",
- patientpublisher.service,
- pharmacy.service
+ patientproducer.service,
+ pharmacyproducer.service
 Bundle-ActivationPolicy: lazy

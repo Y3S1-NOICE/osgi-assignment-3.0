@@ -3,9 +3,11 @@ package doctorchannel.service;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+
+import databaseproducer.service.IDatabaseService;
+import userstoreproducer.service.IUserService;
+
 import static doctorchannel.util.DBQueries.*;
-import database.service.IDatabaseService;
-import userstore.service.IUserService;
 
 public class ChannelServiceImpl implements IChannelService {
 	private IUserService userService;

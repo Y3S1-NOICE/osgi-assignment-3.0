@@ -3,9 +3,9 @@ Bundle-ManifestVersion: 2
 Bundle-Name: LabConsumer
 Bundle-SymbolicName: LabConsumer
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: labsubscriber.activator.Activator
+Bundle-Activator: labconsumer.activator.Activator
 Bundle-RequiredExecutionEnvironment: JavaSE-15
 Automatic-Module-Name: LabSubscriber
-Import-Package: laboratory.service,
+Import-Package: laboratoryproducer.service,
  org.osgi.framework;version="1.3.0"
 Bundle-ActivationPolicy: lazy
