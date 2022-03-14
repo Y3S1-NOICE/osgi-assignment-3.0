@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Move element &apos;Activator.java&apos; to &apos;DoctorChannel/src/doctorchannel.activator&apos;&#x0D;&#x0A;- Original project: &apos;DoctorChannel&apos;&#x0D;&#x0A;- Destination element: &apos;DoctorChannel/src/doctorchannel.activator&apos;&#x0D;&#x0A;- Original element: &apos;doctorchannel.Activator.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src&lt;doctorchannel.activator" element1="/src&lt;doctorchannel{Activator.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1646969703480" units="1" version="1.0"/>
-</session>
