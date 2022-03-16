@@ -3,6 +3,14 @@ package adminconsumer.util;
 import java.util.Scanner;
 
 public class Helper {
+	
+	/**
+	 * Takes user inputs and return it. If user enter enters wrong input, it 
+	 * will ask until user enters correct input.
+	 * @param noOfChoices
+	 * @param Scanner object
+	 * @return user's input
+	 */
 	public static int takeInput(int noOfChoices, Scanner sc) {
 		while(true) {
 			boolean checked = false;

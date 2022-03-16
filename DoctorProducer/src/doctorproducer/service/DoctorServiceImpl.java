@@ -21,11 +21,19 @@ public class DoctorServiceImpl implements IDoctorService {
 		this.preparedStatement = null;
 		this.connection = dbService.getDatabaseConnection();
 	}
+	
+	/**
+	 * This method will authenticate doctor.
+	 */
 	@Override
 	public boolean doctorLogin(String nic, String password) {
 		return userService.login(nic, password, ROLE_DOCTOR);
 	}
-
+	
+	/**
+	 * This method will retrive available doctors from 
+	 * doctor_availability table
+	 */
 	@Override
 	public ResultSet getAvailableDoctors() {
 		try {
@@ -36,7 +44,11 @@ public class DoctorServiceImpl implements IDoctorService {
 			return null;
 		}
 	}
-
+	
+	/**
+	 * This method will change doctor availability status by removing and 
+	 * adding records into doctor_availability table.
+	 */
 	@Override
 	public void setAvailability(String nic, boolean status) {
 		ResultSet doctor = userService.getUserByNicAndRole(nic, ROLE_DOCTOR);

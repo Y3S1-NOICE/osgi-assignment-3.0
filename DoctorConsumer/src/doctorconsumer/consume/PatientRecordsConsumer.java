@@ -19,6 +19,9 @@ public class PatientRecordsConsumer {
 		this.doctorNic = doctorNic;
 	}
 	
+	/**
+	 * Creating new patient records with the use of patientService producer
+	 */
 	public void setPatientRecords() {
 		System.out.println("\n>>SET PATIENT RECORDS...\n");
 		System.out.print("Enter Patient NIC: ");
@@ -37,6 +40,9 @@ public class PatientRecordsConsumer {
 		System.out.println("Record created. :)");
 	}
 	
+	/**
+	 * retrieving patient records in the database with the use of patientService producer
+	 */
 	public void getPatientRecords() {
 		System.out.println("\n\tPATIENT RECORDS...");
 		System.out.print("Enter patient's NIC to get records: ");

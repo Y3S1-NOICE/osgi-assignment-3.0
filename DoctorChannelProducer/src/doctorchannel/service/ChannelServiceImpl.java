@@ -20,6 +20,10 @@ public class ChannelServiceImpl implements IChannelService {
 		this.connection = dbService.getDatabaseConnection();
 	}
 	
+	/**
+	 * This method will create a doctor channel record in the database. 
+	 * Also will create a 'channel' table if does not exist one
+	 */
 	@Override
 	public void channelDoctor(String doctorNic, String patientNic, String date) {
 		try {
@@ -38,7 +42,11 @@ public class ChannelServiceImpl implements IChannelService {
 			System.out.println("Something went wrong when inserting doctor channel record! "+e.getMessage());
 		}
 	}
-
+	
+	/**
+	 * This method will retrieve records in 'channel' table 
+	 * according to the given patient nic
+	 */
 	@Override
 	public ResultSet seeDoctorChannels(String doctorNic) {
 		try {
@@ -51,6 +59,10 @@ public class ChannelServiceImpl implements IChannelService {
 		}
 	}
 
+	/**
+	 * This method will delete channel records in the table according 
+	 * to given channelId
+	 */
 	@Override
 	public void deleteChannels(String channelId) {
 		try {

@@ -16,19 +16,29 @@ public class Activator implements BundleActivator {
 	private ServiceReference userReference;
 	private ServiceRegistration serviceRegistration;
 	
+	/**
+	 * Implements start method in the lifecycle
+	 */
 	public void start(BundleContext context) {
 		System.out.println("Doctor is starting...");
+		
+		//getting database service
 		dbReference = context.getServiceReference(IDatabaseService.class.getName());
 		IDatabaseService databaseService = (IDatabaseService) context.getService(dbReference);
 		
+		//getting user service
 		userReference = context.getServiceReference(IUserService.class.getName());
 		IUserService userService = (IUserService) context.getService(userReference);
 		
+		//registering doctor service
 		IDoctorService doctorService = new DoctorServiceImpl(databaseService, userService);
 		serviceRegistration = context.registerService(IDoctorService.class.getName(), doctorService, null);
 		
 	}
 		
+	/**
+	 * Implements stop method in the lifecycle
+	 */
 	public void stop(BundleContext context) throws Exception {
 		System.out.println("Doctor is stopped...");
 		context.ungetService(dbReference);

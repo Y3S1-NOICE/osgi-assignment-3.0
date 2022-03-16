@@ -33,14 +33,19 @@ public class Menu {
 		this.doctorService = doctorService;
 		this.sc = new Scanner(System.in);
 		
+		//login method will be called right after menu object is created.
 		login();
 		
+		//creation of service consuming objects from several producers.
 		channel = new ChannelDoctorConsumer(channelService, doctorNic);
 		records = new PatientRecordsConsumer(patientService, doctorNic);
 		prescription = new PrescriptionConsumer(pharmacyService, doctorNic);
 		docConsumer = new DoctorConsumer(doctorService, doctorNic);
 	}
 	
+	/**
+	 * This method will authenticate doctor
+	 */
 	public void login() {
 		while(true) {
 			System.out.print("\nEnter nic: ");
@@ -60,6 +65,10 @@ public class Menu {
 		System.out.println(">>>>DOCTOR PORTAL");
 	}
 
+	/**
+	 * This method will display main menu to the doctor
+	 * @return doctor's input
+	 */
 	public int displayMainMenu() {
 		System.out.println("\nMain Menu");
 		System.out.println("\t1. Patient Channelings");
@@ -72,6 +81,10 @@ public class Menu {
 		return Helper.takeInput(6, sc);
 	}
 	
+	/**
+	 * This method will invoke methods to get services from producers 
+	 * according to doctor's selection in the main menu
+	 */
 	public void startTemplate() {
 		int selection = displayMainMenu();
 		

@@ -18,6 +18,10 @@ public class UserServiceConsumer {
 		sc = new Scanner(System.in);
 	}
 	
+	/**
+	 * will display available user roles and ask for user to choose one
+	 * @return selected user role
+	 */
 	public String displayUserRoles() {
 		System.out.println("\nSelect a user role from below.");
 		System.out.println("\t1. doctor");
@@ -42,6 +46,9 @@ public class UserServiceConsumer {
 		}
 	}
 	
+	/**
+	 * Adding new user method according admin's inputs
+	 */
 	public void addUser() {
 		String role = displayUserRoles();
 		
@@ -62,6 +69,10 @@ public class UserServiceConsumer {
 		System.out.println("User created :)");
 	}
 	
+	/**
+	 * getting users from userService
+	 * @return if users retrieving success or not.
+	 */
 	public boolean getUsers() {
 		String role = displayUserRoles();
 		

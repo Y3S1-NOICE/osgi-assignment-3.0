@@ -16,11 +16,17 @@ public class DoctorConsumer {
 		this.doctorNic = doctorNic;
 	}
 	
+	/**
+	 * Setting doctor status available with the use of docotorService producer.
+	 */
 	public void setDoctorAvailabe() {
 		doctorService.setAvailability(doctorNic, true);
 		System.out.println("You are available now :)");
 	}
 	
+	/**
+	 * Setting doctor status available with the use of docotorService producer.
+	 */
 	public void setDoctorUnavailable() {
 		doctorService.setAvailability(doctorNic, false);
 		System.out.println("You are unavailable now :(");

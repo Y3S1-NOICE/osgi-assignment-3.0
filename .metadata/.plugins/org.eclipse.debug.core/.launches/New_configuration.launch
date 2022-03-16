@@ -12,9 +12,19 @@
     <intAttribute key="default_start_level" value="4"/>
     <setAttribute key="deselected_workspace_bundles">
         <setEntry value="AdminConsumer"/>
+        <setEntry value="BillProducer"/>
+        <setEntry value="DatabaseProducer"/>
+        <setEntry value="DoctorChannelProducer"/>
         <setEntry value="DoctorConsumer"/>
+        <setEntry value="DoctorProducer"/>
         <setEntry value="LabConsumer"/>
+        <setEntry value="LaboratoryProducer"/>
+        <setEntry value="PatientConsumer"/>
+        <setEntry value="PatientProducer"/>
         <setEntry value="PharmacyConsumer"/>
+        <setEntry value="PharmacyProducer"/>
+        <setEntry value="UserStoreProducer"/>
+        <setEntry value="com.mysql.jdbc"/>
         <setEntry value="test"/>
     </setAttribute>
     <booleanAttribute key="includeOptional" value="true"/>
@@ -672,18 +682,7 @@
         <setEntry value="org.w3c.dom.smil@default:default"/>
         <setEntry value="org.w3c.dom.svg@default:default"/>
     </setAttribute>
-    <setAttribute key="selected_workspace_bundles">
-        <setEntry value="BillProducer@default:default"/>
-        <setEntry value="DatabaseProducer@default:default"/>
-        <setEntry value="DoctorChannelProducer@default:default"/>
-        <setEntry value="DoctorProducer@default:default"/>
-        <setEntry value="LaboratoryProducer@default:default"/>
-        <setEntry value="PatientConsumer@default:default"/>
-        <setEntry value="PatientProducer@default:default"/>
-        <setEntry value="PharmacyProducer@default:default"/>
-        <setEntry value="UserStoreProducer@default:default"/>
-        <setEntry value="com.mysql.jdbc@default:default"/>
-    </setAttribute>
+    <setAttribute key="selected_workspace_bundles"/>
     <booleanAttribute key="show_selected_only" value="false"/>
     <booleanAttribute key="tracing" value="false"/>
     <booleanAttribute key="useCustomFeatures" value="false"/>

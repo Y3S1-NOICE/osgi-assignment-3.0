@@ -3,26 +3,22 @@ package databaseproducer.service;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import static databaseproducer.util.Util.*;
 
 public class DatabaseServiceImpl implements IDatabaseService {
 	private Connection connection;
-	private final String diverName;
-	private String databaseConnectionLink;
-	private String databaseUser;
-	private String databasePassword;
 	
 	public DatabaseServiceImpl() {
-		this.diverName = "com.mysql.jdbc.Driver";
-		this.databaseConnectionLink = "jdbc:mysql://localhost:3306/test_db?characterEncoding=latin1&useConfigs=maxPerformance";
-		this.databaseUser = "root";
-		this.databasePassword = "password";
 	}
 
+	/**
+	 * This method will create a connection with the database
+	 */
 	@Override
 	public Connection getDatabaseConnection() {
 		try {
-			Class.forName(diverName);
-			connection = (Connection) DriverManager.getConnection(databaseConnectionLink, databaseUser, databasePassword);
+			Class.forName(DRIVER);
+			connection = (Connection) DriverManager.getConnection(CONNECTION_STRING, USERNAME, PASSWORD);
 		} catch (ClassNotFoundException exc) {
 			System.out.println("Class not found");
 			System.out.println(exc.getMessage());

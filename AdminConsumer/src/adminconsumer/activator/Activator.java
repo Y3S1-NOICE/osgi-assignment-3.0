@@ -12,6 +12,9 @@ public class Activator implements BundleActivator {
 
 	private ServiceReference userServiceRef;
 
+	/**
+	 * start method implementation
+	 */
 	public void start(BundleContext context)  {
 		System.out.println("Admin consumer is starting...");
 		
@@ -21,7 +24,10 @@ public class Activator implements BundleActivator {
 		Menu menu = new Menu(userService);
 		menu.startTemplate();
 	}
-
+	
+	/**
+	 * stop method implementation
+	 */
 	public void stop(BundleContext context) throws Exception {
 		context.ungetService(userServiceRef);
 		System.out.println("Admin consumer is stopping...");

@@ -17,6 +17,11 @@ public class ChannelDoctorConsumer {
 		this.doctorNic = doctorNic;
 	}
 	
+	/**
+	 * This method will retrieve channel records from channelService producer and
+	 * prints channel records
+	 * @return if channel records were retrieved or not.
+	 */
 	public boolean getChannelList() {
 		ResultSet rs = channelService.seeDoctorChannels(doctorNic);
 		System.out.println("\n>>CHANNELINGS...\n");

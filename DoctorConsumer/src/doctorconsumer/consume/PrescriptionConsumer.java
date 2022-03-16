@@ -15,6 +15,9 @@ public class PrescriptionConsumer {
 		this.doctorNic = doctorNic;
 	}
 	
+	/**
+	 * Creating prescription records in the database using pharmacyService producer.
+	 */
 	public void createPrescription() {
 		System.out.println("\n>>WRITE PRESCRIPTION...\n");
 		System.out.print("Enter patient's NIC: ");
