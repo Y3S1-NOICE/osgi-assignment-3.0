@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: PharmacyConsumer
+Bundle-SymbolicName: PharmacyConsumer
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: pharmacyconsumer.activator.Activator
+Bundle-RequiredExecutionEnvironment: JavaSE-15
+Automatic-Module-Name: PharmacySubscriber
+Import-Package: org.osgi.framework;version="1.3.0",
+ pharmacyproducer.service
+Bundle-ActivationPolicy: lazy

@@ -1,0 +1,95 @@
+package doctorproducer.service;
+
+import static doctorproducer.util.DBQueries.*;
+import static doctorproducer.util.Util.*;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import databaseproducer.service.IDatabaseService;
+import userstoreproducer.service.IUserService;
+
+public class DoctorServiceImpl implements IDoctorService {
+	
+	private IUserService userService;
+	private PreparedStatement preparedStatement;
+	private Connection connection;
+	
+	public DoctorServiceImpl(IDatabaseService dbService, IUserService userService) {
+		this.userService = userService;
+		this.preparedStatement = null;
+		this.connection = dbService.getDatabaseConnection();
+	}
+	
+	/**
+	 * This method will authenticate doctor.
+	 */
+	@Override
+	public boolean doctorLogin(String nic, String password) {
+		return userService.login(nic, password, ROLE_DOCTOR);
+	}
+	
+	/**
+	 * This method will retrive available doctors from 
+	 * doctor_availability table
+	 */
+	@Override
+	public ResultSet getAvailableDoctors() {
+		try {
+			preparedStatement = connection.prepareStatement(GET_AVAILABLE_DOCTORS);
+			return preparedStatement.executeQuery();
+		} catch (Exception e) {
+			System.out.println("Something went wrong when getting availabale doctors details! "+e.getMessage());
+			return null;
+		}
+	}
+	
+	/**
+	 * This method will change doctor availability status by removing and 
+	 * adding records into doctor_availability table.
+	 */
+	@Override
+	public void setAvailability(String nic, boolean status) {
+		ResultSet doctor = userService.getUserByNicAndRole(nic, ROLE_DOCTOR);
+		String fName = "";
+		String lName = "";
+		
+		if (!status) {
+			try {
+				preparedStatement = connection.prepareStatement(REMOVE_AVAILABLE_DOCTOR);
+				preparedStatement.setString(1, nic);
+				preparedStatement.execute();
+			} catch (Exception e) {
+				System.out.println("Something went wrong when removing availabale doctors details! "+e.getMessage());
+			}
+		} else {
+
+			try {
+				while(doctor.next()) {
+					fName = doctor.getString(FIRST_NAME);
+					lName = doctor.getString(LAST_NAME);
+				}
+			} catch (Exception e) {
+				System.out.println("Something went wrong when getting doctor details! "+e.getMessage());
+			}
+			
+			try {
+				preparedStatement = connection.prepareStatement(ADD_AVAILABLE_DOCTOR);
+				preparedStatement.setString(1, nic);
+				preparedStatement.setString(2, fName);
+				preparedStatement.setString(3, lName);
+				preparedStatement.execute(CREATE_DOCTOR_AVAILABILITY_TABLE_IF_NOT_EXSIST);
+			} catch (Exception e) {
+				System.out.println("Something went wrong when creating doc availability table! "+e.getMessage());
+			} 
+			
+			try {
+				preparedStatement.execute();
+			} catch (Exception e) {
+				System.out.println("Something went wrong when inserting doc availability! "+e.getMessage());
+			}
+		}
+	}
+
+}

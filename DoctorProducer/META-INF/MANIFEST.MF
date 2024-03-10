@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: DoctorProducer
+Bundle-SymbolicName: DoctorProducer
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: doctorproducer.activator.Activator
+Bundle-RequiredExecutionEnvironment: JavaSE-15
+Automatic-Module-Name: DoctorService
+Import-Package: databaseproducer.service,
+ org.osgi.framework;version="1.3.0",
+ userstoreproducer.service
+Bundle-ActivationPolicy: lazy
+Export-Package: doctorproducer.service

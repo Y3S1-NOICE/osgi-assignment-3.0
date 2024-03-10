@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: LaboratoryProducer
+Bundle-SymbolicName: LaboratoryProducer
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: laboratoryproducer.activator.Activator
+Bundle-RequiredExecutionEnvironment: JavaSE-15
+Automatic-Module-Name: Laboratory
+Import-Package: databaseproducer.service,
+ org.osgi.framework;version="1.3.0",
+ userstoreproducer.service
+Bundle-ActivationPolicy: lazy
+Export-Package: laboratoryproducer.service

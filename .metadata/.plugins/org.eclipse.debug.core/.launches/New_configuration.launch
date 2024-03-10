@@ -11,8 +11,20 @@
     <booleanAttribute key="default_auto_start" value="true"/>
     <intAttribute key="default_start_level" value="4"/>
     <setAttribute key="deselected_workspace_bundles">
-        <setEntry value="AdminSubscriber"/>
-        <setEntry value="PatientSubscriber"/>
+        <setEntry value="AdminConsumer"/>
+        <setEntry value="BillProducer"/>
+        <setEntry value="DatabaseProducer"/>
+        <setEntry value="DoctorChannelProducer"/>
+        <setEntry value="DoctorConsumer"/>
+        <setEntry value="DoctorProducer"/>
+        <setEntry value="LabConsumer"/>
+        <setEntry value="LaboratoryProducer"/>
+        <setEntry value="PatientConsumer"/>
+        <setEntry value="PatientProducer"/>
+        <setEntry value="PharmacyConsumer"/>
+        <setEntry value="PharmacyProducer"/>
+        <setEntry value="UserStoreProducer"/>
+        <setEntry value="com.mysql.jdbc"/>
         <setEntry value="test"/>
     </setAttribute>
     <booleanAttribute key="includeOptional" value="true"/>
@@ -670,18 +682,7 @@
         <setEntry value="org.w3c.dom.smil@default:default"/>
         <setEntry value="org.w3c.dom.svg@default:default"/>
     </setAttribute>
-    <setAttribute key="selected_workspace_bundles">
-        <setEntry value="Bill@default:default"/>
-        <setEntry value="Database@default:default"/>
-        <setEntry value="DoctorChannel@default:default"/>
-        <setEntry value="DoctorPublisher@default:default"/>
-        <setEntry value="DoctorSubscriber@default:default"/>
-        <setEntry value="Laboratory@default:default"/>
-        <setEntry value="PatientPublisher@default:default"/>
-        <setEntry value="Pharmacy@default:default"/>
-        <setEntry value="UserStore@default:default"/>
-        <setEntry value="com.mysql.jdbc@default:default"/>
-    </setAttribute>
+    <setAttribute key="selected_workspace_bundles"/>
     <booleanAttribute key="show_selected_only" value="false"/>
     <booleanAttribute key="tracing" value="false"/>
     <booleanAttribute key="useCustomFeatures" value="false"/>

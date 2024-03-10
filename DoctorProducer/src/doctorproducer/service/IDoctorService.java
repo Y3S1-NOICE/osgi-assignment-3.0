@@ -1,0 +1,11 @@
+package doctorproducer.service;
+import java.sql.ResultSet;
+
+
+public interface IDoctorService {
+
+	public boolean doctorLogin(String nic, String password);
+	public ResultSet getAvailableDoctors();
+	public void setAvailability(String nic, boolean status);
+	
+}

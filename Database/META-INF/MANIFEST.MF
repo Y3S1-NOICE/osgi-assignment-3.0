@@ -1,12 +1,12 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Database
-Bundle-SymbolicName: Database
+Bundle-Name: DatabaseProducer
+Bundle-SymbolicName: DatabaseProducer
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: database.activator.Activator
+Bundle-Activator: databaseproducer.activator.Activator
 Bundle-RequiredExecutionEnvironment: JavaSE-15
 Automatic-Module-Name: Database
 Import-Package: com.mysql.jdbc,
  org.osgi.framework;version="1.3.0"
 Bundle-ActivationPolicy: lazy
-Export-Package: database.service
+Export-Package: databaseproducer.service

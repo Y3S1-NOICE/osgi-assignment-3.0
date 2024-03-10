@@ -1,8 +1,5 @@
 package test;
 
-import database.service.IDatabaseService;
-import doctorpublisher.service.IDoctorService;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -10,8 +7,11 @@ import java.sql.Statement;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;
-import pharmacy.service.IPharmacyService;
-import userstore.service.IUserService;
+
+import databaseproducer.service.IDatabaseService;
+import doctorproducer.service.IDoctorService;
+import pharmacyproducer.service.IPharmacyService;
+import userstoreproducer.service.IUserService;
 
 public class Activator implements BundleActivator {
 	
